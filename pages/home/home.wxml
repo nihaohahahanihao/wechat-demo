@@ -1,0 +1,3 @@
+<!--pages/home/home.wxml-->
+<view>66666</view>
+<button size="mini" bindgetuserinfo="getUserInfo" open-type="getUserInfo">點擊獲取用戶信息</button>

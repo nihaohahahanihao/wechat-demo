@@ -1,0 +1,6 @@
+<!--pages/template/template.wxml-->
+<text>这里是小小程序模板，类似vue组件，方便共同使用</text>
+<template name="template">
+  <view>{{name}}</view>
+  <view>{{money}}</view>
+</template>

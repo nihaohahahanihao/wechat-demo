@@ -1,0 +1,63 @@
+<!--pages/zhouchangsheng/zhouchangsheng.wxml-->
+<import src='../template/template'/>
+<text>这是我的第一个小程序</text>
+<view class='title'>
+想想就开心，学会了小程序
+</view>
+<view>
+{{name}}{{age}}{{sex}}{{message}}
+</view>
+<!--  -->
+<view id='item-{{id}}'></view>
+<!-- wx:if -->
+<view wx:if='{{condition}}'>你能看到我吗？</view>
+<!-- 关键字 -->
+<checkbox checked='{{condition}}'>足球</checkbox>
+<!-- 三目运算 -->
+<view hidden='{{flag? true:false}}'>你能看到的吗</view>
+<!-- 算术运算 -->
+<view>{{a+b}}+{{c}}+{{d}}</view>
+<view>{{a+b}}</view>
+<!-- 逻辑判断 -->
+<view wx:if="{{a>2}}">这是真的</view>
+<!-- 字符串运算 -->
+<view>{{"hellow"+name}}</view>
+<!-- 数据路径运算 -->
+<view>{{obj.key}}{{arr[0]}}</view>
+<!-- wx:for -->
+<view wx:for="{{[1,2,3,4,5]}}">{{item}}</view>
+<view>======================</view>
+<view wx:for="{{newArr}}">{{item}}</view>
+<!-- 使用模板 --><!--...代表把这个对象展开-->
+<template is="template" data='{{...items}}'></template>
+<!-- 组合对象1 -->
+<template name="objectCombine">
+  <view>{{"姓名:"+infoOne.name}}</view>
+  <view>{{"年龄:"+infoTwo.age}}</view>
+</template>
+<!-- 接上边，起别名的方式 -->
+<template is="objectCombine" data='{{infoOne:infoJack,infoTwo:infoRose}}'></template>
+<!-- 组合对象2 -->
+<template name="objectNew">
+  <view>{{"姓名:"+infoJack.name}}</view>
+  <view>{{"年龄:"+infoRose.age}}</view>
+</template>
+<!-- 接上边，起别名的方式 -->
+<template is="objectNew" data='{{infoJack,infoRose}}'></template>
+<!-- wx:if和wx:elif -->
+<view wx:if='{{a>b}}'>1</view>
+<view wx:elif='{{b>c}}'>2</view>
+<view wx:else>3</view>
+<!-- 显示或者隐藏多条标签 -->
+<block wx:if="condition">
+  <view>{{name}}</view>
+  <view>{{age}}</view>
+</block>
+<!-- 频繁切换用hidden比较好 -->
+<!-- 数组渲染 -->
+<view wx:for="{{[1,2,3,4]}}">{{item}}</view>
+<map ></map>
+<!-- 更改传入的对象 -->
+<view wx:for='{{newArr}}' wx:for-index='ind' wx:for-item='itm'>{{ind}}</view>
+<!-- 文件引入 -->
+<include src='../index/index' /> 
